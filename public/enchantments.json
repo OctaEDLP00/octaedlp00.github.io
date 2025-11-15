@@ -1,0 +1,29 @@
+{
+  "enchantments": [
+    {
+      "name": "Protección",
+      "lvl": 4,
+      "price": "32 esmeraldas"
+    },
+    {
+      "name": "Filo",
+      "lvl": 5,
+      "price": "45 esmeraldas"
+    },
+    {
+      "name": "Fortuna",
+      "lvl": 3,
+      "price": "28 esmeraldas"
+    },
+    {
+      "name": "Eficiencia",
+      "lvl": 5,
+      "price": "40 esmeraldas"
+    },
+    {
+      "name": "Irrompibilidad",
+      "lvl": 3,
+      "price": "25 esmeraldas"
+    }
+  ]
+}

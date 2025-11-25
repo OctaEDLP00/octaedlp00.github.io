@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$comment": "",
+  "$id": "EnchatmentsInfo",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "$ref": "#/definitions/id"
+      },
+      "name": {
+        "$ref": "#/definitions/name"
+      },
+      "maxLvl": {
+        "$ref": "#/definitions/max-lvl"
+      },
+      "minLvl": {
+        "$ref": "#/definitions/min-lvl"
+      }
+    },
+    "required": [
+      "id",
+      "name",
+      "maxLvl",
+      "minLvl"
+    ],
+    "additionalProperties": false
+  },
+  "definitions": {
+    "id": {
+      "type": "string",
+      "default": "",
+      "enum": [
+        "aqua_affinity",
+        "bane_of_atropods",
+        "blast_protection",
+        "breach",
+        "channeling",
+        "curse_of_binding",
+        "curse_of_vanishing",
+        "density",
+        "depth_strider",
+        "efficiency",
+        "feather_falling",
+        "fire_aspect",
+        "fire_protection",
+        "flame",
+        "fortune",
+        "frost_walker",
+        "impaling",
+        "infinity",
+        "knockback",
+        "looting",
+        "loyalty",
+        "luck_of_the_sea",
+        "lunge",
+        "lure",
+        "mending",
+        "multishot",
+        "piercing",
+        "power",
+        "projectile_protection",
+        "protection",
+        "punch",
+        "quick_charge",
+        "respiration",
+        "riptide",
+        "sharpness",
+        "silk_touch",
+        "smelting",
+        "smite",
+        "soul_speed",
+        "sweeping_edge",
+        "swift_sneak",
+        "thorns",
+        "unbreaking",
+        "wind_burst"
+      ]
+    },
+    "name": {
+      "enum": [
+        "Aqua Affinity",
+        "Bane of Atropods",
+        "Blast Protection",
+        "Breach",
+        "Channeling",
+        "Curse of Binding",
+        "Curse of Vanishing",
+        "Density",
+        "Depth Strider",
+        "Efficiency",
+        "Feather Falling",
+        "Fire Aspect",
+        "Fire Protection",
+        "Flame",
+        "Fortune",
+        "Frost Walker",
+        "Impaling",
+        "Infinity",
+        "Knockback",
+        "Looting",
+        "Loyalty",
+        "Luck of the Sea",
+        "Lunge",
+        "Lure",
+        "Mending",
+        "Multishot",
+        "Piercing",
+        "Power",
+        "Projectile Protection",
+        "Protection",
+        "Punch",
+        "Quick Charge",
+        "Respiration",
+        "Riptide",
+        "Sharpness",
+        "Silk Touch",
+        "Smelting",
+        "Smite",
+        "Soul Speed",
+        "Sweeping Edge",
+        "Swift Sneak",
+        "Thorns",
+        "Unbreaking",
+        "Wind Burst"
+      ]
+    },
+    "max-lvl": {
+      "type": "integer",
+      "default": 5,
+      "minimum": 1,
+      "maximum": 5
+    },
+    "min-lvl": {
+      "default": 1,
+      "type": "integer",
+      "const": 1
+    }
+  }
+}

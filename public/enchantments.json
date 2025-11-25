@@ -1,29 +1,99 @@
 {
   "enchantments": [
     {
-      "name": "Protección",
+      "name": "Power",
       "lvl": 4,
-      "price": "32 esmeraldas"
+      "price": 20
     },
     {
-      "name": "Filo",
-      "lvl": 5,
-      "price": "45 esmeraldas"
+      "name": "Protection",
+      "lvl": 4,
+      "price": 39
     },
     {
-      "name": "Fortuna",
+      "name": "Feather Falling",
+      "lvl": 4,
+      "price": 41
+    },
+    {
+      "name": "Fire Aspect",
+      "lvl": 2,
+      "price": 30
+    },
+    {
+      "name": "Looting",
       "lvl": 3,
-      "price": "28 esmeraldas"
+      "price": 37
     },
     {
-      "name": "Eficiencia",
-      "lvl": 5,
-      "price": "40 esmeraldas"
-    },
-    {
-      "name": "Irrompibilidad",
+      "name": "Unbreaking",
       "lvl": 3,
-      "price": "25 esmeraldas"
+      "price": 17
+    },
+    {
+      "name": "Depth Strider",
+      "lvl": 3,
+      "price": 27
+    },
+    {
+      "name": "Smelting",
+      "lvl": 1,
+      "price": 16
+    },
+    {
+      "name": "Flame",
+      "lvl": 1,
+      "price": 14
+    },
+    {
+      "name": "Sweeping Edge",
+      "lvl": 3,
+      "price": 13
+    },
+    {
+      "name": "Aqua Affinity",
+      "lvl": 1,
+      "price": 18
+    },
+    {
+      "name": "Efficiency",
+      "lvl": 5,
+      "price": 22
+    },
+    {
+      "name": "Respiration",
+      "lvl": 3,
+      "price": 44
+    },
+    {
+      "name": "Smite",
+      "lvl": 5,
+      "price": 33
+    },
+    {
+      "name": "Mending",
+      "lvl": 1,
+      "price": 24
+    },
+    {
+      "name": "Silk Touch",
+      "lvl": 1,
+      "price": 9
+    },
+    {
+      "name": "Sharpness",
+      "lvl": 5,
+      "price": 63
+    },
+    {
+      "name": "Fortune",
+      "lvl": 3,
+      "price": 28
+    },
+    {
+      "name": "Infinity",
+      "lvl": 1,
+      "price": 12
     }
   ]
 }

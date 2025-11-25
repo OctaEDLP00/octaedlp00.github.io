@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <meta
+      name="description"
+      content="Gestiona y organiza todos tus encantamientos de Minecraft Survival. Lleva un registro completo de tus libros encantados, herramientas y armaduras."
+    />
+    <meta
+      name="keywords"
+      content="minecraft, encantamientos, survival, gestión, inventario, libros encantados"
+    />
+    <meta
+      name="author"
+      content="Jugador de Minecraft"
+    />
+    <title>Encantamientos</title>
+    <link
+      rel="stylesheet"
+      href="./index.css"
+    />
+    <script type="importmap">
+      {
+        "imports": {
+          "zod": "https://cdn.jsdelivr.net/npm/zod@4.1.12/+esm",
+          "zod-local": "/lib/zod.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>⚔️ Encantamientos ⚔️</h1>
+      <p>Gestiona tus encantamientos de Minecraft Survival</p>
+    </header>
+
+    <main>
+      <section>
+        <div class="data-controls">
+          <button
+            class="btn-import"
+            id="import-btn"
+          >
+            Importar JSON
+          </button>
+          <button
+            class="btn-export"
+            id="export-btn"
+          >
+            Exportar JSON
+          </button>
+        </div>
+        <add-form></add-form>
+        <edit-form></edit-form>
+        <enchantments-table></enchantments-table>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 - Gestión de Encantamientos Minecraft</p>
+    </footer>
+    <!-- Loading as ES6 module to support imports -->
+    <script
+      src="./index.js"
+      type="module"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,266 @@
+[
+  {
+    "id": "aqua_affinity",
+    "name": "Aqua Affinity",
+    "minLvl": 1,
+    "maxLvl": 1
+  },
+  {
+    "id": "bane_of_atropods",
+    "name": "Bane of Atropods",
+    "minLvl": 1,
+    "maxLvl": 4
+  },
+  {
+    "id": "blast_protection",
+    "name": "Blast Protection",
+    "minLvl": 1,
+    "maxLvl": 4
+  },
+  {
+    "id": "breach",
+    "name": "Breach",
+    "minLvl": 1,
+    "maxLvl": 4
+  },
+  {
+    "id": "channeling",
+    "name": "Channeling",
+    "minLvl": 1,
+    "maxLvl": 1
+  },
+  {
+    "id": "curse_of_binding",
+    "name": "Curse of Binding",
+    "minLvl": 1,
+    "maxLvl": 1
+  },
+  {
+    "id": "curse_of_vanishing",
+    "name": "Curse of Vanishing",
+    "minLvl": 1,
+    "maxLvl": 1
+  },
+  {
+    "id": "density",
+    "name": "Density",
+    "minLvl": 1,
+    "maxLvl": 5
+  },
+  {
+    "id": "depth_strider",
+    "name": "Depth Strider",
+    "minLvl": 1,
+    "maxLvl": 3
+  },
+  {
+    "id": "efficiency",
+    "name": "Efficiency",
+    "minLvl": 1,
+    "maxLvl": 5
+  },
+  {
+    "id": "feather_falling",
+    "name": "Feather Falling",
+    "minLvl": 1,
+    "maxLvl": 4
+  },
+  {
+    "id": "fire_aspect",
+    "name": "Fire Aspect",
+    "minLvl": 1,
+    "maxLvl": 2
+  },
+  {
+    "id": "fire_protection",
+    "name": "Fire Protection",
+    "minLvl": 1,
+    "maxLvl": 4
+  },
+  {
+    "id": "flame",
+    "name": "Flame",
+    "minLvl": 1,
+    "maxLvl": 1
+  },
+  {
+    "id": "fortune",
+    "name": "Fortune",
+    "minLvl": 1,
+    "maxLvl": 3
+  },
+  {
+    "id": "frost_walker",
+    "name": "Frost Walker",
+    "minLvl": 1,
+    "maxLvl": 1
+  },
+  {
+    "id": "impaling",
+    "name": "Impaling",
+    "minLvl": 1,
+    "maxLvl": 5
+  },
+  {
+    "id": "infinity",
+    "name": "Infinity",
+    "minLvl": 1,
+    "maxLvl": 1
+  },
+  {
+    "id": "knockback",
+    "name": "Knockback",
+    "minLvl": 1,
+    "maxLvl": 1
+  },
+  {
+    "id": "looting",
+    "name": "Looting",
+    "minLvl": 1,
+    "maxLvl": 3
+  },
+  {
+    "id": "loyalty",
+    "name": "Loyalty",
+    "minLvl": 1,
+    "maxLvl": 3
+  },
+  {
+    "id": "luck_of_the_sea",
+    "name": "Luck of the Sea",
+    "minLvl": 1,
+    "maxLvl": 3
+  },
+  {
+    "id": "lunge",
+    "name": "Lunge",
+    "minLvl": 1,
+    "maxLvl": 3
+  },
+  {
+    "id": "lure",
+    "name": "Lure",
+    "minLvl": 1,
+    "maxLvl": 3
+  },
+  {
+    "id": "mending",
+    "name": "Mending",
+    "minLvl": 1,
+    "maxLvl": 1
+  },
+  {
+    "id": "multishot",
+    "name": "Multishot",
+    "minLvl": 1,
+    "maxLvl": 1
+  },
+  {
+    "id": "piercing",
+    "name": "Piercing",
+    "minLvl": 1,
+    "maxLvl": 4
+  },
+  {
+    "id": "power",
+    "name": "Power",
+    "minLvl": 1,
+    "maxLvl": 5
+  },
+  {
+    "id": "projectile_protection",
+    "name": "Projectile Protection",
+    "minLvl": 1,
+    "maxLvl": 4
+  },
+  {
+    "id": "protection",
+    "name": "Protection",
+    "minLvl": 1,
+    "maxLvl": 4
+  },
+  {
+    "id": "punch",
+    "name": "Punch",
+    "minLvl": 1,
+    "maxLvl": 2
+  },
+  {
+    "id": "quick_charge",
+    "name": "Quick Charge",
+    "minLvl": 1,
+    "maxLvl": 3
+  },
+  {
+    "id": "respiration",
+    "name": "Respiration",
+    "minLvl": 1,
+    "maxLvl": 3
+  },
+  {
+    "id": "riptide",
+    "name": "Riptide",
+    "minLvl": 1,
+    "maxLvl": 3
+  },
+  {
+    "id": "sharpness",
+    "name": "Sharpness",
+    "minLvl": 1,
+    "maxLvl": 5
+  },
+  {
+    "id": "silk_touch",
+    "name": "Silk Touch",
+    "minLvl": 1,
+    "maxLvl": 1
+  },
+  {
+    "id": "smelting",
+    "name": "Smelting",
+    "minLvl": 1,
+    "maxLvl": 1
+  },
+  {
+    "id": "smite",
+    "name": "Smite",
+    "minLvl": 1,
+    "maxLvl": 5
+  },
+  {
+    "id": "soul_speed",
+    "name": "Soul Speed",
+    "minLvl": 1,
+    "maxLvl": 3
+  },
+  {
+    "id": "sweeping_edge",
+    "name": "Sweeping Edge",
+    "minLvl": 1,
+    "maxLvl": 3
+  },
+  {
+    "id": "swift_sneak",
+    "name": "Swift Sneak",
+    "minLvl": 1,
+    "maxLvl": 3
+  },
+  {
+    "id": "thorns",
+    "name": "Thorns",
+    "minLvl": 1,
+    "maxLvl": 3
+  },
+  {
+    "id": "unbreaking",
+    "name": "Unbreaking",
+    "minLvl": 1,
+    "maxLvl": 3
+  },
+  {
+    "id": "wind_burst",
+    "name": "Wind Burst",
+    "minLvl": 1,
+    "maxLvl": 3
+  }
+]

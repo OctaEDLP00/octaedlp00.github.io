@@ -1,0 +1,87 @@
+{
+  "$id": "Enchantments",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "enchantments": {
+      "type": "array",
+      "items": {
+        "exclusiveMinimum": 3,
+        "type": "object",
+        "properties": {
+          "name": {
+            "$ref": "#/definitions/name"
+          },
+          "lvl": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 64
+          },
+          "price": {
+            "type": "integer",
+
+            "minimum": 1,
+            "maximum": 64
+          }
+        },
+        "required": [
+          "name",
+          "lvl",
+          "price"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "definitions": {
+    "name": {
+      "type": "string",
+      "enum": [
+        "Aqua Affinity",
+        "Bane of Atropods",
+        "Blast Protection",
+        "Breach",
+        "Channeling",
+        "Curse of Binding",
+        "Curse of Vanishing",
+        "Density",
+        "Depth Strider",
+        "Efficiency",
+        "Feather Falling",
+        "Fire Aspect",
+        "Fire Protection",
+        "Flame",
+        "Fortune",
+        "Frost Walker",
+        "Impaling",
+        "Infinity",
+        "Knockback",
+        "Looting",
+        "Loyalty",
+        "Luck of the Sea",
+        "Lunge",
+        "Lure",
+        "Mending",
+        "Multishot",
+        "Piercing",
+        "Power",
+        "Projectile Protection",
+        "Protection",
+        "Punch",
+        "Quick Charge",
+        "Respiration",
+        "Riptide",
+        "Sharpness",
+        "Silk Touch",
+        "Smelting",
+        "Smite",
+        "Soul Speed",
+        "Sweeping Edge",
+        "Swift Sneak",
+        "Thorns",
+        "Unbreaking",
+        "Wind Burst"
+      ]
+    }
+  }
+}

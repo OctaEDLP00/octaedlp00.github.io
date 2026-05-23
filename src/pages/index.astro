@@ -1,0 +1,139 @@
+---
+import Layout from '~/layouts/Layout.astro'
+import Header from '~/components/Header.astro'
+import Footer from '~/components/Footer.astro'
+import RepoCard from '~/components/RepoCard.astro'
+import Input from '~/components/ui/Input.astro'
+import SortFilter from '~/components/SortFilter.astro'
+import LanguageFilter from '~/components/LanguageFilter.astro'
+import type { GitHubUser, GithubRepositories } from '~/types'
+import { getInfoGithubAPI } from '~/lib/getInfoGithubAPI.ts'
+import { getAllRepos } from '~/lib/getAllRepos.ts'
+import { USER_NAME } from '~/constants/index.ts'
+import { writeFile, readFile } from 'node:fs/promises'
+import { existsSync } from 'node:fs'
+import { getLanguages } from '~/lib/getLanguages'
+import { getTopLanguages } from '~/lib/getTopLanguages'
+
+const USER_FILE = './src/data/user.json'
+const REPOS_FILE = './src/data/repos.json'
+const LANGS_FILE = './src/data/langs_repos.json'
+
+type TopLangs = Array<{ name: string; langs: Array<{ name: string; percentage: number }> }>
+
+let userInfo: GitHubUser | null = null
+let ownRepos: Array<GithubRepositories> = []
+let topLangsData: TopLangs = []
+
+const hasCache = existsSync(USER_FILE) && existsSync(REPOS_FILE) && existsSync(LANGS_FILE)
+
+if (import.meta.env.DEV && hasCache) {
+  userInfo = JSON.parse(await readFile(USER_FILE, 'utf-8'))
+  ownRepos = JSON.parse(await readFile(REPOS_FILE, 'utf-8'))
+  topLangsData = JSON.parse(await readFile(LANGS_FILE, 'utf-8'))
+} else {
+  userInfo = await getInfoGithubAPI(USER_NAME)
+  const allRepos = await getAllRepos(USER_NAME)
+  ownRepos = allRepos?.filter(repo => !repo.fork) || []
+
+  const promises = ownRepos.map(async ({ name, languages_url }) => {
+    const rawLangs = (await getLanguages(languages_url)) ?? {}
+    return {
+      name,
+      langs: getTopLanguages(rawLangs),
+    }
+  })
+
+  topLangsData = await Promise.all(promises)
+
+  if (import.meta.env.DEV) {
+    await writeFile(USER_FILE, JSON.stringify(userInfo, null, 2))
+    await writeFile(REPOS_FILE, JSON.stringify(ownRepos, null, 2))
+    await writeFile(LANGS_FILE, JSON.stringify(topLangsData, null, 2))
+  }
+}
+
+const languagesSet = new Set<string>()
+
+// Extraemos lenguajes de la data procesada para el filtro
+topLangsData.forEach(repo => {
+  repo.langs.forEach(l => languagesSet.add(l.name))
+})
+---
+
+<Layout
+  title='Repositories | OctaEDLP00'
+  description='A collection of repositories showcasing my projects and contributions on GitHub. Explore my work, from web development to open-source collaborations.'
+  themeColor='#1f2937'
+>
+  {
+    userInfo && (
+      <Header
+        avatar_url={userInfo.avatar_url}
+        bio={userInfo.bio}
+        followers={userInfo.followers}
+        login={userInfo.login}
+        name={userInfo.name}
+        public_repos={userInfo.public_repos}
+      />
+    )
+  }
+
+  <main class='mx-auto max-w-7xl px-4 py-8'>
+    <div class='mb-8 flex flex-col gap-4 md:flex-row'>
+      <div class='flex-1'>
+        <Input
+          type='text'
+          id='search-input'
+          placeholder='Buscar repositorios...'
+          class='bg-secondary border-border text-foreground placeholder-muted focus:border-primary w-full rounded-lg border px-4 py-2.5 transition-colors focus:outline-none'
+        />
+      </div>
+      <div class='flex gap-3'>
+        <LanguageFilter languages={languagesSet} />
+        <SortFilter />
+      </div>
+    </div>
+
+    <div
+      id='repos-grid'
+      class='flex flex-col gap-6'
+    >
+      {
+        ownRepos?.map(repo => {
+          // Buscamos los lenguajes correspondientes a este repo en la data procesada
+          const repoLangs = topLangsData.find(l => l.name === repo.name)?.langs || []
+
+          return (
+            <RepoCard
+              {...repo}
+              processedLangs={repoLangs}
+            />
+          )
+        })
+      }
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<script>
+  // Tu lógica de filtrado se mantiene igual, ya que depende del DOM generado
+  document.querySelector('#search-input')?.addEventListener('input', e => {
+    const query = (e.target as HTMLInputElement).value.toLowerCase()
+    const repos = document.querySelectorAll('#repos-grid article')
+    repos.forEach(repo => {
+      const name = repo.querySelector('h3')?.textContent?.toLowerCase() || ''
+      repo.classList.toggle('hidden', !name.includes(query))
+    })
+  })
+
+  document.querySelector('#language-filter')?.addEventListener('change', e => {
+    const lang = (e.target as HTMLSelectElement).value
+    const repos = document.querySelectorAll('#repos-grid article')
+    repos.forEach(repo => {
+      const repoLang = repo.getAttribute('data-language') || ''
+      repo.classList.toggle('hidden', lang !== 'all' && repoLang !== lang)
+    })
+  })
+</script>

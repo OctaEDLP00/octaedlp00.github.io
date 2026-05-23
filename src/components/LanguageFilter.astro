@@ -1,0 +1,17 @@
+---
+import Select from '~/components/ui/Select.astro'
+
+interface Props {
+  languages: Set<string>
+}
+
+const { languages } = Astro.props
+---
+
+<Select
+  defaultOptionText='Todos'
+  id='language-filter'
+  class='bg-secondary border-border text-foreground focus:border-primary cursor-pointer rounded-lg border px-4 py-2.5 transition-colors focus:outline-none'
+>
+  {languages.forEach(lang => <option value={lang.toLowerCase()}>{lang}</option>)}
+</Select>

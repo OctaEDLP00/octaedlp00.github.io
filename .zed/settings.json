@@ -3,5 +3,38 @@
     "after_delay": {
       "milliseconds": 1000
     }
+  },
+  "file_types": {
+    "json": ["*.lock", ".postcssrc", ".stylelintrc", ".babelrc", ".eslintrc", ".prettierrc"],
+    "xml": ["*.form", "*.xml", "*.svg"],
+    "mcfunction": ["*.mcfunction"],
+    "markdown": ["*.md", "*.mdx"],
+    "excel": ["*.xlsx"],
+    "env": [".env", ".env.*"],
+    "jsonc": ["*.mcmeta", ".eslintrc", ".prettierrc"],
+    "css": ["*.pcss", "*.postcss"],
+    "html": ["*.html", "*.htm"],
+    "javascript": ["*.js"],
+    "typescript": ["*.ts"],
+    "javascriptreact": ["*.jsx"],
+    "typescriptreact": ["*.tsx"]
+  },
+  "lsp": {
+    "json-language-server": {
+      "settings": {
+        "json": {
+          "schemas": [
+            {
+              "fileMatch": ["./src/data/enchantments.json"],
+              "url": "./src/schemas/json/Enchantments.schema.json"
+            },
+            {
+              "fileMatch": ["./src/data/enchantmentsInfo.json"],
+              "url": "./src/schemas/json/EnchantmentsInfo.schema.json"
+            }
+          ]
+        }
+      }
+    }
   }
 }

@@ -1,0 +1,14 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+
+interface Props extends HTMLAttributes<'select'> {
+  defaultOptionText?: string
+}
+
+const { defaultOptionText } = Astro.props
+---
+
+<select {...Astro.props}>
+  {defaultOptionText ? <option value=''>{defaultOptionText}</option> : null}
+  <slot />
+</select>

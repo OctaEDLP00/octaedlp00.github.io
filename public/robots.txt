@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Host
+Host:
+
+# Sitemaps
+Sitemap: https://www./sitemap-index.xml

@@ -1,0 +1,48 @@
+---
+import Share from '~/assets/share.svg'
+import Star from '~/assets/star.svg'
+import Calendar from '~/assets/calendar.svg'
+import LanguageBadge from './LanguageBadge.astro'
+import TemplateBadge from './TemplateBadge.astro'
+import type { GithubRepositories } from '~/types'
+import { formatDate } from '~/lib/formatDate.ts'
+
+interface Props extends GithubRepositories {
+  processedLangs: Array<{ name: string; percentage: number }>
+}
+const { name, updated_at, stargazers_count, forks_count, is_template, processedLangs } = Astro.props
+---
+
+<a
+  href={`/repo/${name}`}
+  class='group border-border bg-card text-card-foreground hover:border-foreground/20 hover:bg-accent/50 flex w-full items-center gap-4 rounded-lg border px-5 py-3.5 transition-colors'
+>
+  <div class='flex shrink-0 items-center gap-3'>
+    <span class='text-sm font-semibold tracking-tight'>{name}</span>
+    {is_template && <TemplateBadge />}
+  </div>
+  <div class='flex flex-1 items-center justify-center gap-2'>
+    {
+      processedLangs.map(({ name, percentage }) => (
+        <LanguageBadge
+          name={name}
+          percentage={percentage}
+        />
+      ))
+    }
+  </div>
+  <div class='flex shrink-0 items-center gap-5'>
+    <span class='text-muted-foreground flex items-center gap-1.5 text-xs'>
+      <Star class='size-5' />
+      <p class='text-base'>{stargazers_count}</p>
+    </span>
+    <span class='text-muted-foreground flex items-center gap-1.5 text-xs'>
+      <Share class='size-3.5' />
+      <p class='text-base'>{forks_count}</p>
+    </span>
+    <span class='text-muted-foreground flex items-center gap-1.5 text-xs'>
+      <Calendar class='size-6' />
+      <p class='text-base'>{formatDate(updated_at)}</p>
+    </span>
+  </div>
+</a>

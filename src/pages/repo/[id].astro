@@ -1,0 +1,9 @@
+---
+import { getRepo } from '~/lib/getRepo'
+
+const { id } = Astro.params
+
+const repo = await getRepo('OctaEDLP00', id ?? '')
+---
+
+<h1>{repo?.name}</h1>

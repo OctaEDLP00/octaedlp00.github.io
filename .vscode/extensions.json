@@ -31,6 +31,8 @@
     "miguelsolorio.symbols",
     "talhabalaj.actual-font-changer",
     "thomascsd.vscode-readme-pattern",
-    "christian-kohler.npm-intellisense"
+    "christian-kohler.npm-intellisense",
+    "oxc.oxc-vscode",
+    "spences10.robots-txt"
   ]
 }

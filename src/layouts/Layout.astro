@@ -1,0 +1,24 @@
+---
+import '~/styles/index.css'
+import Seo from '~/components/Seo.astro'
+import type { Preload } from '~/types'
+
+interface Props {
+  title: string
+  description?: string | undefined
+  preload?: Array<Preload> | undefined
+  canonical?: string | undefined
+  image?: string | undefined
+  themeColor?: string | undefined
+}
+---
+
+<!doctype html>
+<html lang='es'>
+  <head>
+    <Seo {...Astro.props} />
+  </head>
+  <body class='min-h-screen'>
+    <slot />
+  </body>
+</html>

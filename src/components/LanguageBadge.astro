@@ -1,0 +1,44 @@
+---
+interface Props {
+  name: string
+  percentage: number
+}
+
+const languageColors = {
+  JavaScript: 'bg-yellow-400',
+  TypeScript: 'bg-blue-500',
+  Python: 'bg-green-500',
+  HTML: 'bg-orange-500',
+  CSS: 'bg-pink-500',
+  SCSS: 'bg-pink-400',
+  Sass: 'bg-pink-400',
+  Java: 'bg-red-500',
+  'C++': 'bg-blue-700',
+  C: 'bg-gray-500',
+  Go: 'bg-cyan-500',
+  Rust: 'bg-orange-700',
+  Ruby: 'bg-red-600',
+  PHP: 'bg-indigo-500',
+  Swift: 'bg-orange-400',
+  Kotlin: 'bg-purple-500',
+  Shell: 'bg-green-600',
+  Vue: 'bg-emerald-500',
+  Dart: 'bg-sky-500',
+  Dockerfile: 'bg-sky-600',
+  Makefile: 'bg-green-700',
+} satisfies Record<string, string>
+
+const { name, percentage } = Astro.props
+---
+
+<span
+  class='bg-secondary/50 border-border inline-flex items-center rounded-md border px-2 py-0.5 text-xs'
+>
+  <span
+    class:list={[
+      'mr-1.5 h-2 w-2 rounded-full',
+      languageColors[name as keyof typeof languageColors],
+    ]}></span>
+  {name}
+  <span class='text-muted ml-1'>{percentage}%</span>
+</span>

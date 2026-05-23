@@ -1,18 +1,4 @@
 {
-  "json.schemas": [
-    {
-      "url": "/src/json-schema/EnchantmentsInfo.schema.json",
-      "fileMatch": [ "/src/data/EnchantmentsInfo.json" ]
-    },
-    {
-      "url": "/src/json-schema/Enchantments.schema.json",
-      "fileMatch": [ "/public/enchantments.json" ]
-    },
-    {
-      "url": "https://json-schema.org/draft-07/schema#",
-      "fileMatch": [ "/src/json-schema/*.json" ]
-    }
-  ],
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit",
     "source.fixAll.eslint": "explicit"
@@ -30,9 +16,9 @@
   "eslint.enable": true,
   "eslint.format.enable": true,
   "eslint.run": "onSave",
-  "eslint.validate": [ "javascript", "javascriptreact", "typescript", "typescriptreact", "astro" ],
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact", "astro"],
   "prettier.enable": true,
-  "prettier.documentSelectors": [ "**/*.astro" ],
+  "prettier.documentSelectors": ["**/*.astro"],
   "[astro]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -51,7 +37,7 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "css.customData": [ ".vscode/tailwindcss.json" ],
+  "css.customData": [".vscode/tailwindcss.json"],
   "editor.wordWrap": "on",
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": true,

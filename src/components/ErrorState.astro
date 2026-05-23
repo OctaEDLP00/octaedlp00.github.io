@@ -1,0 +1,23 @@
+---
+import Error from '~/assets/error.svg'
+---
+
+<div
+  id='error-state'
+  class='hidden py-16 text-center'
+>
+  <Error class='mx-auto mb-4 h-16 w-16 text-red-500' />
+  <p class='mb-2 text-lg text-red-400'>Error al cargar los repositorios</p>
+  <button class='text-primary hover:underline'>Reintentar</button>
+</div>
+
+<script>
+  const $btn = document.querySelector('#error-state button')
+  if ($btn === null || !($btn instanceof HTMLButtonElement)) {
+    throw new Error('No se encontró el botón de reintentar en el estado de error')
+  } else {
+    $btn.addEventListener('click', () => {
+      console.log('Reintentando cargar los repositorios...')
+    })
+  }
+</script>
